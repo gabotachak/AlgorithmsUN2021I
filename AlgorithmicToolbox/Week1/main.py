@@ -24,7 +24,7 @@ def maxPairwiseProductFast(numbers):
     
     index2 = 0
     for i in range(n):
-        if((numbers[i] != numbers[index1] and numbers[i]>numbers[index2]):
+        if(numbers[i] != numbers[index1] and numbers[i] > numbers[index2]):
             index2 = i
     return numbers[index1]*numbers[index2]
 
