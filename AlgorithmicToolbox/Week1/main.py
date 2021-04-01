@@ -6,8 +6,8 @@ def maxPairwiseProduct(numbers):
     n = len(numbers)
     for first in range(n):
         for second in range(1,n):
-            aux_product = nombers[first] * numbers[second]
-            if(mac_product < aux_product):
+            aux_product = numbers[first] * numbers[second]
+            if(max_product < aux_product):
                 max_product = aux_product
     return max_product
 
@@ -36,9 +36,9 @@ numbers = []
 
 start = time.time()
 
-for i in range(n):
-    numbers.append(input())
-    if(maxNumber < numbers[i]):
+for i in range(int(n)):
+    numbers.append(int(input()))
+    if(maxNumber < int(numbers[i])):
         maxSecondNumber = maxNumber
         maxNumber = numbers[i]
     elif(maxSecondNumber < numbers[i]):
@@ -57,21 +57,21 @@ print("Execution time:",str(ms_int),"s")
 print()
 
 start = time.time()
-print("Result using Ultra Fast method:",maxParwiseProductFast(numbers))
+print("Result using Product Fast method:",maxPairwiseProductFast(numbers))
 stop = time.time()
 ms_int = stop-start
 print("Execution time:",str(float(reading_time + ms_int)),"s")
 print()
 
 start = time.time()
-print("Result using List method:",maxParwiseProductList(numbers))
+print("Result using List method:",maxPairwiseProductList(numbers))
 stop = time.time()
 ms_int = stop-start
 print("Execution time:",str(float(reading_time + ms_int)),"s")
 print()
 
 start = time.time()
-print("Result using naive method:",maxParwiseProduct(numbers))
+print("Result using naive method:",maxPairwiseProduct(numbers))
 stop = time.time()
 ms_int = stop-start
 print("Execution time:",str(float(reading_time + ms_int)),"s")

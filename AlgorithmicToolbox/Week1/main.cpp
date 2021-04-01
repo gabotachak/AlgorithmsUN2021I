@@ -28,23 +28,23 @@ long long maxPairwiseProductList(vector<unsigned long long int>& numbers){
   return numbers[numbers.size()-1]*numbers[numbers.size()-2];
 }
 
-long long maxPairwiseProductFast(const vector<unsigned long long int>& numbers){  
+long long maxPairwiseProductFast(vector<unsigned long long int>& numbers){  
   long long n = numbers.size();
-  long long index1 = 0;
-
+  int index1 = 0;
+  int index2 = 0;
+    
   for(int i= 1; i < n; i++){
     if(numbers[i] > numbers[index1]){
       index1 = i;
     }
   }
-
-  int index2 = 0;
-
+    
   for(int i= 1; i < n; i++){
-    if(numbers[i]!=numbers[index1] && numbers[i]>numbers[index2]){
+    if(i!=index1 && numbers[i]>numbers[index2]){
       index2 = i;
     }
-  }
+  } 
+    
   return numbers[index1]*numbers[index2];
 }
 
